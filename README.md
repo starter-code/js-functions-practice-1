@@ -1,7 +1,13 @@
-### Base Repo
+### JS Functions Practice 1: Returns
 
-clone
+#### Setup
 
 ```
-git clone git@github.com:starter-code/base-repo.git <new folder name>
+npm i
+```
+
+### Testing
+
+```
+npm test
 ```
