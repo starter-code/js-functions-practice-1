@@ -46,12 +46,24 @@ const checkPalindrome = (inputString) => {
 /**
  * @description takes two strings and check if they have all the same letters
  * @example checkAnagram("aabb", "abab") // evaluates to true
- * @example checkAnagram("aabv", "pwmd") // evalutes to false
+ * @example checkAnagram("aabv", "pwmd") // evaluates to false
  * @param {*} baseString
  * @param {*} stringToMatch
  * @returns {Boolean}
  */
 const checkAnagram = (baseString, stringToMatch) => {
+  // fill in function logic
+};
+
+/**
+ * @description takes two numbers and returns an array of even numbers starting with the start and ending with the finish
+ * @example evenNumbersFromStartToFinish(1,5) // evaluates to [2,4]
+ * @example evenNumbersFromStartToFinish(2,10) // evaluates to [2,4,6,8,10]
+ * @param {Number} start
+ * @param {Number} finish
+ * @returns {Number[]}
+ */
+const evenNumbersFromStartToFinish = (start, finish) => {
   // fill in function logic
 };
 
@@ -61,4 +73,5 @@ module.exports = {
   mostCommonItem,
   checkPalindrome,
   checkAnagram,
+  evenNumbersFromStartToFinish,
 };

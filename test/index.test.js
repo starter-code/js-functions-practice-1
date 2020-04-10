@@ -5,6 +5,7 @@ const {
   mostCommonItem,
   checkPalindrome,
   checkAnagram,
+  evenNumbersFromStartToFinish,
 } = jsFunctions;
 
 const paramsOne = {
@@ -13,6 +14,7 @@ const paramsOne = {
   mostCommonItem: [1, 1, 1, 3, 2, 4],
   checkPalindrome: 'racecar',
   checkAnagram: ['debit card', 'dirty room'],
+  evenNumbersFromStartToFinish: [0, 10],
 };
 
 const paramsTwo = {
@@ -21,6 +23,7 @@ const paramsTwo = {
   mostCommonItem: [3, 2, 1, 3, 2, 4],
   checkPalindrome: 'racecare',
   checkAnagram: ['racecar', 'football'],
+  evenNumbersFromStartToFinish: [5, 12],
 };
 
 const expectedOutputOne = {
@@ -29,6 +32,7 @@ const expectedOutputOne = {
   mostCommonItem: 1,
   checkPalindrome: true,
   checkAnagram: true,
+  evenNumbersFromStartToFinish: [0, 2, 4, 6, 8, 10],
 };
 
 const expectedOutputTwo = {
@@ -37,6 +41,7 @@ const expectedOutputTwo = {
   mostCommonItem: [3, 2],
   checkPalindrome: false,
   checkAnagram: false,
+  evenNumbersFromStartToFinish: [6, 8, 10, 12],
 };
 
 describe('JS Functions Practice: Return', () => {
@@ -90,5 +95,19 @@ describe('JS Functions Practice: Return', () => {
   it('checkAnagram "racecar" should not be an anagram of "football"', () => {
     const actualOutput = checkAnagram(paramsTwo.checkAnagram);
     expect(actualOutput).toBe(expectedOutputTwo.checkAnagram);
+  });
+
+  it('evenNumbersFromStartToFinish from 5 to 12 should be [6, 8, 10, 12]', () => {
+    const actualOutput = evenNumbersFromStartToFinish(
+      paramsOne.evenNumbersFromStartToFinish,
+    );
+    expect(actualOutput).toBe(expectedOutputOne.evenNumbersFromStartToFinish);
+  });
+
+  it('evenNumbersFromStartToFinish from 0 to 10 should [0, 2, 4, 6, 8, 10]', () => {
+    const actualOutput = evenNumbersFromStartToFinish(
+      paramsTwo.evenNumbersFromStartToFinish,
+    );
+    expect(actualOutput).toBe(expectedOutputTwo.evenNumbersFromStartToFinish);
   });
 });
