@@ -24,8 +24,8 @@ const repeatString = (stringToRepeat, count) => {
  * if there are more than 1, return an array of most common items
  * @example mostCommonItem([1,1,2]) // evaluates to 1
  * @example mostCommonItem([1,2,2,3,3]) // evaluates to [2,3]
- * @param {Any} inputArray
- * @returns {Any || Any[]}
+ * @param {Number[]} inputArray
+ * @returns {Number || Number[]}
  */
 const mostCommonItem = (inputArray) => {
   // fill in function logic
@@ -47,8 +47,8 @@ const checkPalindrome = (inputString) => {
  * @description takes two strings and check if they have all the same letters
  * @example checkAnagram("aabb", "abab") // evaluates to true
  * @example checkAnagram("aabv", "pwmd") // evaluates to false
- * @param {*} baseString
- * @param {*} stringToMatch
+ * @param {String} baseString
+ * @param {String} stringToMatch
  * @returns {Boolean}
  */
 const checkAnagram = (baseString, stringToMatch) => {

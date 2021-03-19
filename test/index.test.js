@@ -8,106 +8,67 @@ const {
   evenNumbersFromStartToFinish,
 } = jsFunctions;
 
-const paramsOne = {
-  addTwo: [5, 5],
-  repeatString: ['Hello', 5],
-  mostCommonItem: [1, 1, 1, 3, 2, 4],
-  checkPalindrome: 'racecar',
-  checkAnagram: ['debit card', 'dirty room'],
-  evenNumbersFromStartToFinish: [0, 10],
-};
-
-const paramsTwo = {
-  addTwo: [5, 15],
-  repeatString: ['Hello World!', 2],
-  mostCommonItem: [3, 2, 1, 3, 2, 4],
-  checkPalindrome: 'racecare',
-  checkAnagram: ['racecar', 'football'],
-  evenNumbersFromStartToFinish: [5, 12],
-};
-
-const expectedOutputOne = {
-  addTwo: 10,
-  repeatString: 'HelloHelloHelloHelloHello',
-  mostCommonItem: 1,
-  checkPalindrome: true,
-  checkAnagram: true,
-  evenNumbersFromStartToFinish: [0, 2, 4, 6, 8, 10],
-};
-
-const expectedOutputTwo = {
-  addTwo: 20,
-  repeatString: 'Hello World!Hello World!',
-  mostCommonItem: [3, 2],
-  checkPalindrome: false,
-  checkAnagram: false,
-  evenNumbersFromStartToFinish: [6, 8, 10, 12],
-};
-
 describe('JS Functions Practice: Return', () => {
-  it('AddTwo should add 5 and 5', () => {
-    const actualOutput = addTwo(...paramsOne.addTwo);
-    expect(actualOutput).toBe(expectedOutputOne.addTwo);
+  it('AddTwo should add 5 and 5 and return 10', () => {
+    const actualOutput = addTwo(5, 5);
+    expect(actualOutput).toBe(10);
   });
 
   it('AddTwo should add 5 and 15', () => {
-    const actualOutput = addTwo(...paramsTwo.addTwo);
-    expect(actualOutput).toBe(expectedOutputTwo.addTwo);
+    const actualOutput = addTwo(5, 15);
+    expect(actualOutput).toBe(20);
   });
 
   it('repeatString should repeat "Hello" 5 times', () => {
-    const actualOutput = repeatString(...paramsOne.repeatString);
-    expect(actualOutput).toBe(expectedOutputOne.repeatString);
+    const actualOutput = repeatString('Hello', 2);
+    expect(actualOutput).toBe('HelloHello');
   });
 
   it('repeatString should repeat "Hello World!" 5 times', () => {
-    const actualOutput = repeatString(...paramsTwo.repeatString);
-    expect(actualOutput).toBe(expectedOutputTwo.repeatString);
+    const actualOutput = repeatString('Hello World!', 5);
+    expect(actualOutput).toBe(
+      'Hello World!Hello World!Hello World!Hello World!Hello World!',
+    );
   });
 
-  it('mostCommonItem should be 1', () => {
-    const actualOutput = mostCommonItem(paramsOne.mostCommonItem);
-    expect(actualOutput).toBe(expectedOutputOne.mostCommonItem);
+  it('mostCommonItem of [1, 1, 1, 3, 2, 4] should be 1', () => {
+    const actualOutput = mostCommonItem([1, 1, 1, 3, 2, 4]);
+    expect(actualOutput).toBe(1);
   });
 
-  it('mostCommonItem should be [3, 2] or [2, 3]', () => {
-    // @todo: take care of sorting
-    const actualOutput = mostCommonItem(paramsTwo.mostCommonItem);
-    expect(actualOutput).toBe(expectedOutputTwo.mostCommonItem);
+  it('mostCommonItem of [3, 2, 1, 3, 2, 4] should be [3, 2] or [2, 3]', () => {
+    // TODO: take care of sorting edge case
+    const actualOutput = mostCommonItem([3, 2, 1, 3, 2, 4]);
+    expect(actualOutput).toEqual([3, 2]);
   });
 
   it('checkPalindrome "racecar" should be true', () => {
-    const actualOutput = checkPalindrome(paramsOne.checkPalindrome);
-    expect(actualOutput).toBe(expectedOutputOne.checkPalindrome);
+    const actualOutput = checkPalindrome('racecar');
+    expect(actualOutput).toBe(true);
   });
 
   it('checkPalindrome "racecaer" should be false', () => {
-    // @todo: take care of sorting
-    const actualOutput = checkPalindrome(paramsTwo.checkPalindrome);
-    expect(actualOutput).toBe(expectedOutputTwo.checkPalindrome);
+    const actualOutput = checkPalindrome('racecaer');
+    expect(actualOutput).toBe(false);
   });
 
   it('checkAnagram "debit card" should be an anagram of "dirty room"', () => {
-    const actualOutput = checkAnagram(paramsOne.checkAnagram);
-    expect(actualOutput).toBe(expectedOutputOne.checkAnagram);
+    const actualOutput = checkAnagram('debit card', 'dirty room');
+    expect(actualOutput).toBe(true);
   });
 
   it('checkAnagram "racecar" should not be an anagram of "football"', () => {
-    const actualOutput = checkAnagram(paramsTwo.checkAnagram);
-    expect(actualOutput).toBe(expectedOutputTwo.checkAnagram);
+    const actualOutput = checkAnagram('racecar', 'football');
+    expect(actualOutput).toBe(true);
   });
 
   it('evenNumbersFromStartToFinish from 5 to 12 should be [6, 8, 10, 12]', () => {
-    const actualOutput = evenNumbersFromStartToFinish(
-      paramsOne.evenNumbersFromStartToFinish,
-    );
-    expect(actualOutput).toBe(expectedOutputOne.evenNumbersFromStartToFinish);
+    const actualOutput = evenNumbersFromStartToFinish(5, 12);
+    expect(actualOutput).toEqual([6, 8, 10, 12]);
   });
 
   it('evenNumbersFromStartToFinish from 0 to 10 should [0, 2, 4, 6, 8, 10]', () => {
-    const actualOutput = evenNumbersFromStartToFinish(
-      paramsTwo.evenNumbersFromStartToFinish,
-    );
-    expect(actualOutput).toBe(expectedOutputTwo.evenNumbersFromStartToFinish);
+    const actualOutput = evenNumbersFromStartToFinish(0, 10);
+    expect(actualOutput).toBe([0, 2, 4, 6, 8, 10]);
   });
 });
